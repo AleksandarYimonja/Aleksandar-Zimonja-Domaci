@@ -15,7 +15,7 @@ namespace Ekranska_forma
     {
         public int Red = 0;
         DataTable osoba = new DataTable();
-        string cs = "Data source=.; Initial catalog=Osoba; Integrated security=true";
+        string cs = "Data source=.; Initial catalog=DomaciADO; Integrated security=true";
 
         public Form1()
         {
@@ -25,9 +25,8 @@ namespace Ekranska_forma
         private void Form1_Load(object sender, EventArgs e)
         {
             SqlConnection veza = new SqlConnection(cs);
-            SqlDataAdapter adapter = new SqlDataAdapter("SELECT Ime, Prezime, JMBG, Adresa, Imejl FROM Osoba ORDER BY ID", veza);
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT ID, Ime, Prezime, JMBG, Adresa, Imejl FROM Osoba ORDER BY ID", veza);
             adapter.Fill(osoba);
-            //MessageBox.Show(ucenik.Rows.Count.ToString());
             FillBoxes(Red);
         }
 
@@ -95,7 +94,7 @@ namespace Ekranska_forma
                 + "', '" + TxtPrezime.Text
                 + "', '" + TxtJMBG.Text
                 + "', '" + TxtAdresa.Text
-                + "', " + TxtImejl.Text + ")";
+                + "', '" + TxtImejl.Text + "')";
 
             SqlConnection veza = new SqlConnection(cs);
             SqlCommand naredbaDodaj = new SqlCommand(komanda, veza);
@@ -113,7 +112,7 @@ namespace Ekranska_forma
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-            string komanda = "DELETE FROM Osoba WHERE id = " + TxtID.Text;
+            string komanda = "DELETE FROM Osoba WHERE ID = " + TxtID.Text;
 
             SqlConnection veza = new SqlConnection(cs);
             SqlCommand naredbaDodaj = new SqlCommand(komanda, veza);
@@ -129,6 +128,30 @@ namespace Ekranska_forma
             {
                 Red = osoba.Rows.Count - 1;
             }
+            FillBoxes(Red);
+        }
+
+        private void btnChng_Click(object sender, EventArgs e)
+        {
+            string komanda = "UPDATE Osoba SET Ime = '"
+                + TxtIme.Text
+                + "', Prezime = '" + TxtPrezime.Text
+                + "', JMBG = '" + TxtJMBG.Text
+                + "', Adresa = '" + TxtAdresa.Text
+                + "', Imejl = '" + TxtImejl.Text
+                + "' WHERE id = " + TxtID.Text;
+
+
+            SqlConnection veza = new SqlConnection(cs);
+            SqlCommand naredbaDodaj = new SqlCommand(komanda, veza);
+
+            veza.Open();
+            naredbaDodaj.ExecuteNonQuery();
+            veza.Close();
+
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT ID, Ime, Prezime, JMBG, Adresa, Imejl FROM Osoba ORDER BY ID", veza);
+            osoba.Clear();
+            adapter.Fill(osoba);
             FillBoxes(Red);
         }
     }

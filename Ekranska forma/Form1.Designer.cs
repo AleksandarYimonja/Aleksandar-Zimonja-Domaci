@@ -52,6 +52,7 @@ namespace Ekranska_forma
             // 
             // TxtID
             // 
+            this.TxtID.Enabled = false;
             this.TxtID.Location = new System.Drawing.Point(141, 56);
             this.TxtID.Name = "TxtID";
             this.TxtID.Size = new System.Drawing.Size(100, 20);
@@ -154,6 +155,7 @@ namespace Ekranska_forma
             this.btnNext.TabIndex = 12;
             this.btnNext.Text = ">";
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnPrev
             // 
@@ -163,6 +165,7 @@ namespace Ekranska_forma
             this.btnPrev.TabIndex = 13;
             this.btnPrev.Text = "<";
             this.btnPrev.UseVisualStyleBackColor = true;
+            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
             // btnEnd
             // 
@@ -172,6 +175,7 @@ namespace Ekranska_forma
             this.btnEnd.TabIndex = 14;
             this.btnEnd.Text = ">>";
             this.btnEnd.UseVisualStyleBackColor = true;
+            this.btnEnd.Click += new System.EventHandler(this.btnEnd_Click);
             // 
             // btnHome
             // 
@@ -181,6 +185,7 @@ namespace Ekranska_forma
             this.btnHome.TabIndex = 15;
             this.btnHome.Text = "<<";
             this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // btnAdd
             // 
@@ -190,6 +195,7 @@ namespace Ekranska_forma
             this.btnAdd.TabIndex = 16;
             this.btnAdd.Text = "Dodaj";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnChng
             // 
@@ -199,6 +205,7 @@ namespace Ekranska_forma
             this.btnChng.TabIndex = 17;
             this.btnChng.Text = "Izmeni";
             this.btnChng.UseVisualStyleBackColor = true;
+            this.btnChng.Click += new System.EventHandler(this.btnChng_Click);
             // 
             // btnDel
             // 
@@ -208,6 +215,7 @@ namespace Ekranska_forma
             this.btnDel.TabIndex = 18;
             this.btnDel.Text = "Brisi";
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // Form1
             // 
