@@ -45,6 +45,9 @@ namespace Ekranska_forma
             this.btnPrev = new System.Windows.Forms.Button();
             this.btnEnd = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnChng = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // TxtID
@@ -179,11 +182,41 @@ namespace Ekranska_forma
             this.btnHome.Text = "<<";
             this.btnHome.UseVisualStyleBackColor = true;
             // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(85, 270);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 16;
+            this.btnAdd.Text = "Dodaj";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // btnChng
+            // 
+            this.btnChng.Location = new System.Drawing.Point(166, 270);
+            this.btnChng.Name = "btnChng";
+            this.btnChng.Size = new System.Drawing.Size(75, 23);
+            this.btnChng.TabIndex = 17;
+            this.btnChng.Text = "Izmeni";
+            this.btnChng.UseVisualStyleBackColor = true;
+            // 
+            // btnDel
+            // 
+            this.btnDel.Location = new System.Drawing.Point(247, 270);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(75, 23);
+            this.btnDel.TabIndex = 18;
+            this.btnDel.Text = "Brisi";
+            this.btnDel.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDel);
+            this.Controls.Add(this.btnChng);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.btnEnd);
             this.Controls.Add(this.btnPrev);
@@ -226,6 +259,9 @@ namespace Ekranska_forma
         private System.Windows.Forms.Button btnPrev;
         private System.Windows.Forms.Button btnEnd;
         private System.Windows.Forms.Button btnHome;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnChng;
+        private System.Windows.Forms.Button btnDel;
     }
 }
 

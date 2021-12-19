@@ -1,0 +1,10 @@
+D:\GitHub\Aleksandar-Zimonja-Domaci\Ekranska forma\bin\Debug\Ekranska forma.exe.config
+D:\GitHub\Aleksandar-Zimonja-Domaci\Ekranska forma\bin\Debug\Ekranska forma.exe
+D:\GitHub\Aleksandar-Zimonja-Domaci\Ekranska forma\bin\Debug\Ekranska forma.pdb
+D:\GitHub\Aleksandar-Zimonja-Domaci\Ekranska forma\obj\Debug\Ekranska forma.csprojAssemblyReference.cache
+D:\GitHub\Aleksandar-Zimonja-Domaci\Ekranska forma\obj\Debug\Ekranska_forma.Form1.resources
+D:\GitHub\Aleksandar-Zimonja-Domaci\Ekranska forma\obj\Debug\Ekranska_forma.Properties.Resources.resources
+D:\GitHub\Aleksandar-Zimonja-Domaci\Ekranska forma\obj\Debug\Ekranska forma.csproj.GenerateResource.cache
+D:\GitHub\Aleksandar-Zimonja-Domaci\Ekranska forma\obj\Debug\Ekranska forma.csproj.CoreCompileInputs.cache
+D:\GitHub\Aleksandar-Zimonja-Domaci\Ekranska forma\obj\Debug\Ekranska forma.exe
+D:\GitHub\Aleksandar-Zimonja-Domaci\Ekranska forma\obj\Debug\Ekranska forma.pdb

@@ -25,7 +25,7 @@ namespace Ekranska_forma
         private void Form1_Load(object sender, EventArgs e)
         {
             SqlConnection veza = new SqlConnection(cs);
-            SqlDataAdapter adapter = new SqlDataAdapter("SELECT id, ime, prezime, ocena FROM Osoba ORDER BY id", veza);
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT Ime, Prezime, JMBG, Adresa, Imejl FROM Osoba ORDER BY ID", veza);
             adapter.Fill(osoba);
             //MessageBox.Show(ucenik.Rows.Count.ToString());
             FillBoxes(Red);
@@ -85,6 +85,50 @@ namespace Ekranska_forma
         private void btnEnd_Click(object sender, EventArgs e)
         {
             Red = osoba.Rows.Count - 1;
+            FillBoxes(Red);
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            string komanda = "INSERT INTO Osoba (Ime, Prezime, JMBG, Adresa, Imejl) VALUES ('"
+                + TxtIme.Text
+                + "', '" + TxtPrezime.Text
+                + "', '" + TxtJMBG.Text
+                + "', '" + TxtAdresa.Text
+                + "', " + TxtImejl.Text + ")";
+
+            SqlConnection veza = new SqlConnection(cs);
+            SqlCommand naredbaDodaj = new SqlCommand(komanda, veza);
+
+            veza.Open();
+            naredbaDodaj.ExecuteNonQuery();
+            veza.Close();
+
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT ID, Ime, Prezime, JMBG, Adresa, Imejl FROM Osoba ORDER BY ID", veza);
+            osoba.Clear();
+            adapter.Fill(osoba);
+            Red = osoba.Rows.Count - 1;
+            FillBoxes(Red);
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            string komanda = "DELETE FROM Osoba WHERE id = " + TxtID.Text;
+
+            SqlConnection veza = new SqlConnection(cs);
+            SqlCommand naredbaDodaj = new SqlCommand(komanda, veza);
+
+            veza.Open();
+            naredbaDodaj.ExecuteNonQuery();
+            veza.Close();
+
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT ID, Ime, Prezime, JMBG, Adresa, Imejl FROM Osoba ORDER BY ID", veza);
+            osoba.Clear();
+            adapter.Fill(osoba);
+            if (Red > osoba.Rows.Count - 1)
+            {
+                Red = osoba.Rows.Count - 1;
+            }
             FillBoxes(Red);
         }
     }
